@@ -38,7 +38,18 @@ Explain the overarching findings, trends, and themes in 2-3 sentences here. This
 
 [Visualization, including a graph of overall trends or snapshot of a dashboard]
 
+# Developer Guide
 
+I used docker container to run my analysis. To replicate the workflow, run the following steps:
+
+Make sure your docker daemon is running before starting.
+
+```
+docker-compose build
+docker-compose up -d
+```
+
+run `docker ps` to make sure that container for postgres and pgadmin are running, then navigate to 'localhost:8080' to open pgadmin GUI and login using the environment variable stored in `.env` file.
 
 # Insights Deep Dive
 ### Category 1:
