@@ -1,11 +1,11 @@
-#Cleaned up version of data-loading.ipynb
-import argparse, os, sys
+import os
+import sys
 from time import time
-import pandas as pd 
-import pyarrow.parquet as pq
+import pandas as pd
 from sqlalchemy import create_engine
 from dotenv import load_dotenv
 
+# Load environment variables from the .env file
 load_dotenv()
 
 def main():
@@ -26,9 +26,11 @@ def main():
     # Create SQL engine
     engine = create_engine(f'postgresql://{user}:{password}@{host}:{port}/{db}')
 
-    # Read the CSV file
-    df = pd.read_csv(file_path, nrows=10)  # Read a small sample to infer schema
-    df_iter = pd.read_csv(file_path, iterator=True, chunksize=100000)
+    # Read a sample to infer schema and check data types
+    df = pd.read_csv(file_path, nrows=10)
+    
+    # Use dtype='object' to avoid type conflicts
+    df_iter = pd.read_csv(file_path, iterator=True, chunksize=100000, dtype='object', low_memory=False)
 
     # Create the table
     df.head(0).to_sql(name=tb, con=engine, if_exists='replace')
@@ -37,9 +39,20 @@ def main():
     count = 0
     for batch in df_iter:
         count += 1
+        
+        # Clean data: Convert problematic columns to numeric if needed, coercing errors
+        for col in batch.columns:
+            try:
+                batch[col] = pd.to_numeric(batch[col], errors='coerce')
+            except ValueError:
+                pass  # Skip conversion if not applicable
+            
         print(f'Inserting batch {count}...')
         b_start = time()
-        batch.to_sql(name=tb, con=engine, if_exists='append')
+        try:
+            batch.to_sql(name=tb, con=engine, if_exists='append', index=False)
+        except Exception as e:
+            print(f"Error inserting batch {count}: {e}")
         b_end = time()
         print(f'Inserted! Time taken {b_end - b_start:10.3f} seconds.\n')
 

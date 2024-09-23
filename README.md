@@ -1,14 +1,15 @@
 # US-Consumer-Finance-Complaints-Analysis
 
 # Project Background
-Backround about the company, including the industry, active years, business model, and key business metrics. Explain this from the POV of a data analyst who is working at the company.
+For the purposes of this project, the CFPB collected tons of consumers’ complaints with respect to financial products and services to companies. They would like to improve the financial marketplace based on those data and hope to use data analysis to advise their course of action.
+
+According to the information derived from the given complaint base, more than 1/3 of the complaints is for Mortgage which is far more exceed the others. By analyzing which attribute are more likely to impact the result mentioned above, those related companies can then better target the key segment to tackle the problem of complaints.
 
 Insights and recommendations are provided on the following key areas:
 
-- **Category 1:** 
-- **Category 2:** 
-- **Category 3:** 
-- **Category 4:** 
+- **Category 1: Category Analysis**
+- **Category 2: Company Analysis** 
+- **Category 3: Demographical Analysis** 
 
 The SQL queries used to inspect and clean the data for this analysis can be found here [link].
 
@@ -20,14 +21,7 @@ An interactive Tableau dashboard used to report and explore sales trends can be 
 
 # Data Structure & Initial Checks
 
-The companies main database structure as seen below consists of four tables: table1, table2, table3, table4, with a total row count of X records. A description of each table is as follows:
-- **Table 2:**
-- **Table 3:**
-- **Table 4:**
-- **Table 5:**
-
-[Entity Relationship Diagram here]
-
+![alt text](image.png)
 
 
 # Executive Summary
@@ -38,18 +32,6 @@ Explain the overarching findings, trends, and themes in 2-3 sentences here. This
 
 [Visualization, including a graph of overall trends or snapshot of a dashboard]
 
-# Developer Guide
-
-I used docker container to run my analysis. To replicate the workflow, run the following steps:
-
-Make sure your docker daemon is running before starting.
-
-```
-docker-compose build
-docker-compose up -d
-```
-
-run `docker ps` to make sure that container for postgres and pgadmin are running, then navigate to 'localhost:8080' to open pgadmin GUI and login using the environment variable stored in `.env` file.
 
 # Insights Deep Dive
 ### Category 1:
@@ -130,3 +112,18 @@ Throughout the analysis, multiple assumptions were made to manage challenges wit
 * Assumption 1 (ex: data for December 2021 was missing - this was imputed using a combination of historical trends and December 2020 data)
   
 * Assumption 1 (ex: because 3% of the refund date column contained non-sensical dates, these were excluded from the analysis)
+
+# Developer Guide
+
+I used docker container to run my analysis. To replicate the workflow, run the following steps:
+
+Make sure your docker daemon is running before starting.
+
+```
+docker-compose build
+docker-compose up -d
+```
+
+run `docker ps` to make sure that container for postgres and pgadmin are running, then navigate to 'localhost:8080' to open pgadmin GUI and login using the environment variable stored in `.env` file.
+
+run `data_loading_csv.py` to load data into postgres database.
