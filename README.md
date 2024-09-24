@@ -1,22 +1,22 @@
 # US-Consumer-Finance-Complaints-Analysis
 
 # Project Background
-For the purposes of this project, the CFPB collected tons of consumers’ complaints with respect to financial products and services to companies. They would like to improve the financial marketplace based on those data and hope to use data analysis to advise their course of action.
+For the purposes of this project, the CFPB (Consumer Financial Protection Bureau) collected tons of consumers’ complaints with respect to financial products and services to companies. They would like to improve the financial marketplace based on those data and hope to use data analysis to advise their course of action.
 
 According to the information derived from the given complaint base, more than 1/3 of the complaints is for Mortgage which is far more exceed the others. By analyzing which attribute are more likely to impact the result mentioned above, those related companies can then better target the key segment to tackle the problem of complaints.
 
 Insights and recommendations are provided on the following key areas:
 
-- **Category 1: Category Analysis**
-- **Category 2: Company Analysis** 
-- **Category 3: Demographical Analysis** 
+- **Category 1: Product Analysis**
+- **Category 2: Issue Analysis**
+- **Category 3: Company Analysis** 
+- **Category 4: Demographical Analysis** 
 
-The SQL queries used to inspect and clean the data for this analysis can be found here [link].
+The python script that transforms and load data to postgres database can be found here[link].
 
-Targed SQL queries regarding various business questions can be found here [link].
+SQL queries regarding various business questions can be found here [link].
 
 An interactive Tableau dashboard used to report and explore sales trends can be found here [link].
-
 
 
 # Data Structure & Initial Checks
@@ -28,7 +28,9 @@ An interactive Tableau dashboard used to report and explore sales trends can be 
 
 ### Overview of Findings
 
-Explain the overarching findings, trends, and themes in 2-3 sentences here. This section should address the question: "If a stakeholder were to take away 3 main insights from your project, what are the most important things they should know?" You can put yourself in the shoes of a specific stakeholder - for example, a marketing manager or finance director - to think creatively about this section.
+1. High Volume of Mortgage Complaints: Mortgage products account for over a third of all complaints, significantly outpacing other financial products such as debt collection and credit reporting. The most common sub-products within mortgages include other mortgage types, conventional fixed mortgages, and adjustable-rate mortgages.
+2. Top Issues Leading to Complaints: The most prevalent issues causing complaints include loan modifications, collection, foreclosure, and incorrect information on credit reports. Sub-issues such as account status and debt ownership disputes are particularly frequent, highlighting specific pain points for consumers.
+3. Major Companies Receiving Complaints: Large financial institutions, including Bank of America, Wells Fargo, and JPMorgan Chase, consistently receive the highest number of complaints. The distribution of complaints by state indicates a recurring pattern, with mortgage products often being the most problematic across various regions.
 
 [Visualization, including a graph of overall trends or snapshot of a dashboard]
 
