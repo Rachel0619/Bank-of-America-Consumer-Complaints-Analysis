@@ -1,92 +1,66 @@
 # US-Consumer-Finance-Complaints-Analysis
 
 # Project Background
-For the purposes of this project, the CFPB (Consumer Financial Protection Bureau) collected tons of consumers’ complaints with respect to financial products and services to companies. They would like to improve the financial marketplace based on those data and hope to use data analysis to advise their course of action.
+This analysis focuses on consumer complaints filed against Bank of America (BOA), using data sourced from the Consumer Complaint Database provided by the Consumer Financial Protection Bureau (CFPB). The dataset contains information on a wide variety of consumer complaints related to financial products and services, including details such as the product, issue, state, and demographic tags. For this analysis, I filtered the dataset to focus exclusively on complaints related to Bank of America, rather than analyzing the entire database. The timeframe of this analysis covers complaints received between 2018-01-01 and 2024-09-25.
 
-According to the information derived from the given complaint base, more than 1/3 of the complaints is for Mortgage which is far more exceed the others. By analyzing which attribute are more likely to impact the result mentioned above, those related companies can then better target the key segment to tackle the problem of complaints.
+The objective of the analysis is to explore both the distribution and trends of complaints by product/sub-product, issue/sub-issue, and demographic group, providing insights into areas where Bank of America may need to improve customer service, operational efficiency, and product offerings. I wrote PostgreSQL queries to examine the proportion and distribution of complaints, identifying which products and issues are most common. Additionally, I created a Tableau dashboard to visualize the trends over time. 
 
 Insights and recommendations are provided on the following key areas:
 
 - **Category 1: Product Analysis**
 - **Category 2: Issue Analysis**
-- **Category 3: Company Analysis** 
-- **Category 4: Demographical Analysis** 
+- **Category 3: Demographical Analysis** 
 
-The python script that transforms and load data to postgres database can be found here[link].
+The jupyter notebook for EDA analysis can be found here[https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/EDA.ipynb].
 
-SQL queries regarding various business questions can be found here [link].
+The jupyter notebook for data cleaning and wrangling can be found here[https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/transformation.ipynb].
 
-An interactive Tableau dashboard used to report and explore sales trends can be found here [link].
+The python script that load data to postgres database can be found here[https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/data_loading_csv.py].
+
+SQL queries that answer various business questions can be found here [https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/analysis_sql_query.ipynb].
+
+An interactive Tableau dashboard used to report and explore sales trends can be found [here](https://public.tableau.com/app/profile/rachel.li3670/viz/consumerfinancecomplaints/Trend).
+
+# Field Name
+
+You will get a full picture of the database this project works on by examining this [field refernce](https://cfpb.github.io/api/ccdb/fields.html). 
 
 
-# Data Structure & Initial Checks
+This database contains a total of 17 fields (I dropped the "company" column because we are only working with Bank of America data here):
 
-![alt text](image.png)
+- Text Fields (Categorical and Descriptive): 14 fields, including fields like Product, Issue, Company public response, Consumer complaint narrative, and Tags. Many of these fields are categorical, while some like Consumer complaint narrative contain substantial text. 
+- Date & Time Fields: 2 fields, including Date received and Date sent to company. These fields allow for temporal analysis, such as identifying complaint trends over time.
+- Numeric Fields: 1 field, Complaint ID, which is a unique identifier for each complaint.
+- Boolean Fields: 3 fields, including Timely response?, Consumer consent provided?, and Consumer disputed?, which are binary in nature (yes/no). 
 
+Given the heavy presence of text fields, especially the `Consumer complaint narrative`, this database lends itself well to NLP techniques to extract insights such as common themes, sentiment analysis, or complaint categorization. 
 
-# Executive Summary
+# Overview of Findings
 
-### Overview of Findings
-
-1. High Volume of Mortgage Complaints: Mortgage products account for over a third of all complaints, significantly outpacing other financial products such as debt collection and credit reporting. The most common sub-products within mortgages include other mortgage types, conventional fixed mortgages, and adjustable-rate mortgages.
-2. Top Issues Leading to Complaints: The most prevalent issues causing complaints include loan modifications, collection, foreclosure, and incorrect information on credit reports. Sub-issues such as account status and debt ownership disputes are particularly frequent, highlighting specific pain points for consumers.
-3. Major Companies Receiving Complaints: Large financial institutions, including Bank of America, Wells Fargo, and JPMorgan Chase, consistently receive the highest number of complaints. The distribution of complaints by state indicates a recurring pattern, with mortgage products often being the most problematic across various regions.
+The analysis reveals that checking and savings accounts are the most frequent source of complaints, with checking accounts alone accounting for a significant portion of consumer dissatisfaction. Issues around account management and fund transactions, particularly deposits and withdrawals, are also common themes in the complaints. On a demographic level, Washington, D.C. had the highest number of complaints per 1000 people in 2023, while Older Americans and Servicemembers represented key groups that require tailored attention to address their unique financial needs. These findings highlight several areas for improvement in Bank of America's products and services, with particular emphasis on customer service and operational efficiency in core banking functions.
 
 [Visualization, including a graph of overall trends or snapshot of a dashboard]
 
 
 # Insights Deep Dive
-### Category 1:
+### Product Analysi:
 
-* **Main insight 1.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 2.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 3.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 4.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
+- The "Checking or savings account" product category generated the highest number of complaints, representing 39.63% of the total. This indicates that core banking services are a significant source of dissatisfaction for Bank of America customers.
 
-[Visualization specific to category 1]
+- Checking accounts specifically account for 84% of the complaints within this category. This suggests that operational and service-related issues in checking accounts—such as accessibility, fees, and transaction management—are key areas for improvement. Addressing these issues could significantly reduce the volume of complaints.
 
+### Issue Analysis:
 
-### Category 2:
+- The most common issue faced by Bank of America customers is "Managing an account", which accounts for 24.06% of all complaints. This highlights potential service gaps in areas such as account maintenance, customer support, and online banking functionality.
 
-* **Main insight 1.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 2.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 3.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 4.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-
-[Visualization specific to category 2]
+- A deeper look at sub-issues reveals that "Deposits and withdrawals" are a major pain point, representing 8.93% of all complaints. This suggests that Bank of America may need to focus on improving the efficiency and accuracy of handling customer funds, particularly in deposit and withdrawal transactions.
 
 
-### Category 3:
+### Demographical Analysis:
 
-* **Main insight 1.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 2.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 3.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 4.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
+- Washington, D.C. (DC) leads the ranking of complaints per 1000 people in 2023, showing a higher complaint rate when adjusted for population. This could indicate a region-specific issue or higher consumer awareness of financial protections in DC, warranting further investigation into the underlying causes of dissatisfaction in this area.
 
-[Visualization specific to category 3]
-
-
-### Category 4:
-
-* **Main insight 1.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 2.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 3.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 4.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-
-[Visualization specific to category 4]
-
+- Older Americans represent 7.43% of total complaints, while Servicemembers account for 5.52%. These two groups, though smaller in volume, likely face unique challenges, and tailored services or support mechanisms may be required to address their specific needs. Understanding and resolving their issues could help Bank of America better serve these important customer segments.
 
 
 # Recommendations:
