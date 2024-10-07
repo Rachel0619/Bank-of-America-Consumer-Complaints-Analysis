@@ -11,13 +11,13 @@ Insights and recommendations are provided on the following key areas:
 - **Category 2: Issue Analysis**
 - **Category 3: Demographical Analysis** 
 
-The jupyter notebook for EDA analysis can be found here[https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/EDA.ipynb].
+The jupyter notebook for EDA analysis can be found [here](https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/EDA.ipynb).
 
-The jupyter notebook for data cleaning and wrangling can be found here[https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/transformation.ipynb].
+The jupyter notebook for data cleaning and wrangling can be found [here](https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/transformation.ipynb).
 
-The python script that load data to postgres database can be found here[https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/data_loading_csv.py].
+The python script that load data to postgres database can be found [here](https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/data_loading_csv.py).
 
-SQL queries that answer various business questions can be found here [https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/analysis_sql_query.ipynb].
+SQL queries that answer various business questions can be found [here](https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/analysis_sql_query.ipynb).
 
 An interactive Tableau dashboard used to report and explore sales trends can be found [here](https://public.tableau.com/app/profile/rachel.li3670/viz/consumerfinancecomplaints/Trend).
 
