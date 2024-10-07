@@ -1,9 +1,12 @@
 # Bank of America Consumer Complaints Analysis 
 
 ## 📊 Project Background 
+
 This analysis focuses on consumer complaints filed against Bank of America (BOA), using data sourced from the Consumer Complaint Database provided by the Consumer Financial Protection Bureau (CFPB). The dataset contains information on a wide variety of consumer complaints related to financial products and services, including details such as the product, issue, state, and demographic tags. For this analysis, I filtered the dataset to focus exclusively on complaints related to Bank of America, rather than analyzing the entire database. The timeframe of this analysis covers complaints received between 2018-01-01 and 2024-09-25.
 
 The objective of the analysis is to explore both the distribution and trends of complaints by product/sub-product, issue/sub-issue, and demographic group, providing insights into areas where Bank of America may need to improve customer service, operational efficiency, and product offerings. I wrote PostgreSQL queries to examine the proportion and distribution of complaints, identifying which products and issues are most common. Additionally, I created a Tableau dashboard to visualize the trends over time. 
+
+![Screenshot of the dashboard](img/dashboard.png)
 
 Insights and recommendations are provided on the following key areas:
 
@@ -21,7 +24,6 @@ An interactive Tableau dashboard used to report and explore sales trends can be 
 
 You will get a full picture of the database this project works on by examining this [field refernce](https://cfpb.github.io/api/ccdb/fields.html). 
 
-
 This database contains a total of 17 fields (I dropped the "company" column because we are only working with Bank of America data here. I also dropped the "Consumer disputed?" here because all values for this field are missing):
 
 - Text (Categorical and Descriptive): 12 fields, including fields like Product, Issue, Company public response, Consumer complaint narrative, and Tags. Many of these fields are categorical, while some like Consumer complaint narrative contain substantial text. 
@@ -34,8 +36,6 @@ Given the heavy presence of text fields, especially the `Consumer complaint narr
 ## 🔍 Overview of Findings
 
 The analysis reveals that checking and savings accounts are the most frequent source of complaints, with checking accounts alone accounting for a significant portion of consumer dissatisfaction. Issues around account management and fund transactions, particularly deposits and withdrawals, are also common themes in the complaints. On a demographic level, Washington, D.C. had the highest number of complaints per 1000 people in 2023, while Older Americans and Servicemembers represented key groups that require tailored attention to address their unique financial needs. These findings highlight several areas for improvement in Bank of America's products and services, with particular emphasis on customer service and operational efficiency in core banking functions.
-
-[Visualization, including a graph of overall trends or snapshot of a dashboard]
 
 
 ## 📈 Insights Deep Dive
