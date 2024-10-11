@@ -21,7 +21,7 @@
 
 ## Project Background 
 
-This analysis focuses on consumer complaints filed against Bank of America (BOA), using data sourced from the Consumer Complaint Database provided by the Consumer Financial Protection Bureau (CFPB). The dataset contains information on a wide variety of consumer complaints related to financial products and services, including details such as the product, issue, state, and demographic tags. For this analysis, I filtered the dataset to focus exclusively on complaints related to Bank of America, rather than analyzing the entire database. The timeframe of this analysis covers complaints received between 2018-01-01 and 2024-09-25.
+This analysis focuses on consumer complaints filed against Bank of America (BOA), using data sourced from the [Consumer Complaint Database](https://www.consumerfinance.gov/data-research/consumer-complaints/) provided by the Consumer Financial Protection Bureau (CFPB). While the original dataset includes complaints about more than 3,000 companies, I chose to focus specifically on Bank of America for this project, as it is one of the companies that receives the highest volume of complaints. The dataset contains information on a wide variety of consumer complaints related to financial products and services, including details such as the product, issue, state, and demographic tags. The timeframe of this analysis covers complaints received between 2018-01-01 and 2024-09-25.
 
 Insights and recommendations are provided on the following key areas:
 
