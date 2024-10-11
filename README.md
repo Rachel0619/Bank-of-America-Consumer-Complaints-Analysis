@@ -4,7 +4,7 @@
 
 - [Project Workflow and Tool Used](#project-workflow-and-tool-used)
 - [Project Background](#project-background)
-- [Dataset Overview and Field Descriptions](#daataset-overview-and-field-descriptions)
+- [Dataset Overview and Field Descriptions](#dataset-overview-and-field-descriptions)
 - [Overview of Findings](#overview-of-findings)
 - [Insights Deep Dive](#insights-deep-dive)
 
