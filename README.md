@@ -80,7 +80,7 @@ The analysis reveals that checking and savings accounts are the most frequent so
 
 ## 🛠️ Developer Guide
 
-I used docker container to run my analysis. To replicate the workflow, run the following steps:
+I used docker container to run postgres and pgadmin. To replicate the workflow, run the following steps:
 
 Make sure your docker daemon is running before starting.
 
@@ -90,3 +90,10 @@ docker-compose up -d
 ```
 
 run `docker ps` to make sure that container for postgres and pgadmin are running, then navigate to 'localhost:8080' to open pgadmin GUI and login using the environment variable stored in `.env` file.
+
+I used virtual envirnoment to run my analysis. To replicate the workflow, run the following commends:
+
+```
+conda env create -f environment.yml
+conda activate complaints_analysis
+```

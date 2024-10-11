@@ -1,0 +1,15 @@
+name: complaints_analysis
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.9
+  - pandas
+  - numpy
+  - matplotlib
+  - wordcloud
+  - tabulate
+  - sqlalchemy
+  - pip
+  - pip:
+    - python-dotenv
