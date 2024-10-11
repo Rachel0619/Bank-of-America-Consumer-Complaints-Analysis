@@ -30,8 +30,7 @@ Insights and recommendations are provided on the following key areas:
 - **Category 3: Demographical Analysis** 
 - **Category 4: Response Analysis** 
 
-The objective of the analysis is to explore both the distribution and trends of complaints by product/sub-product, issue/sub-issue, and demographic group, providing insights into areas where Bank of America may need to improve customer service, operational efficiency, and product offerings. I wrote PostgreSQL queries to examine the proportion and distribution of complaints, identifying which products and issues are most common. Additionally, I created a Tableau dashboard to visualize the trends over time. 
-
+The objective of the analysis is to explore both the distribution and trends of complaints by product/sub-product, issue/sub-issue, and demographic group, providing insights into areas where Bank of America may need to improve customer service, operational efficiency, and product offerings. I started by conducting EDA and performing data cleaning and wrangling with Python to prepare the dataset for analysis. I then loaded the cleaned data into a PostgreSQL database for further analysis. Using PostgreSQL, I queried the data to explore complaint distribution by product, issue, and demographics. Finally, i created a Tableau dashboard to visualize complaint trends and key metrics, providing actionable insights into areas for improvement.
 ![Screenshot of the dashboard](img/dashboard.png)
 
 ## Dataset Overview and Field Descriptions
