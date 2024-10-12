@@ -7,6 +7,7 @@
 - [Dataset Overview and Field Descriptions](#dataset-overview-and-field-descriptions)
 - [Overview of Findings](#overview-of-findings)
 - [Insights Deep Dive](#insights-deep-dive)
+- [Setup Guide](#setup-guide)
 
 ## Project Workflow and Tool Used
 
@@ -17,7 +18,6 @@
 | 3  | Data Loading            | [data_loading_csv.py](https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/src/data_loading_csv.py) | Python, pgAdmin, Docker    |
 | 4  | Data Analysis           | [analysis_sql_query.ipynb](https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/notebook/analysis_sql_query.ipynb) | Python, PostgreSQL       |
 | 5  | Dashboard & Visualization| [Tableau Dashboard](https://public.tableau.com/app/profile/rachel.li3670/viz/consumerfinancecomplaints/Trend) | Tableau                        |
-
 
 ## Project Background 
 
@@ -51,7 +51,6 @@ Given the heavy presence of text fields, especially the `Consumer complaint narr
 
 The analysis reveals that checking and savings accounts are the most frequent source of complaints, with checking accounts alone accounting for a significant portion of consumer dissatisfaction. Issues around account management and fund transactions, particularly deposits and withdrawals, are also common themes in the complaints. On a demographic level, Washington, D.C. had the highest number of complaints per 1000 people in 2023, while Older Americans and Servicemembers represented key groups that require tailored attention to address their unique financial needs. These findings highlight several areas for improvement in Bank of America's products and services, with particular emphasis on customer service and operational efficiency in core banking functions.
 
-
 ## Insights Deep Dive
 ### Product Analysis:
 
@@ -77,8 +76,7 @@ The analysis reveals that checking and savings accounts are the most frequent so
 
 - Most Common Sub-Issues for "Closed with Monetary Relief": Among the complaints that were resolved with monetary relief, the most common sub-issue was related to deposits and withdrawals (2.98%). Issues involving problem using a debit or ATM card (2.34%) and credit card disputes (1.86%) also appear frequently. This suggests that monetary relief is most often associated with problems that directly affect customers' access to or security of their funds. The high occurrence of disputes related to unauthorized transactions and fee problems shows the importance of proper transaction management and transparency in resolving consumer issues. The data also reflects that banking errors and problem during payment process are common pain points that are likely to lead to a financial settlement.
 
-
-## 🛠️ Developer Guide
+## Setup Guide
 
 I used docker container to run postgres and pgadmin. To replicate the workflow, run the following steps:
 
