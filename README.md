@@ -12,10 +12,10 @@
 
 | #  | Purpose                | File Name with Link                                                                                             | Tools Used                    |
 |----|------------------------|-----------------------------------------------------------------------------------------------------------------|-------------------------------|
-| 1  | EDA                    | [EDA.ipynb](https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/EDA.ipynb)        | Python, Jupyter Notebook       |
-| 2  | Data Cleaning & Wrangling | [transformation.ipynb](https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/transformation.ipynb) | Python, Jupyter Notebook       |
-| 3  | Data Loading            | [data_loading_csv.py](https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/data_loading_csv.py) | Python, pgAdmin, Docker    |
-| 4  | Data Analysis           | [analysis_sql_query.ipynb](https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/analysis_sql_query.ipynb) | Python, PostgreSQL       |
+| 1  | EDA                    | [EDA.ipynb](https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/notebook/EDA.ipynb)        | Python, Jupyter Notebook       |
+| 2  | Data Cleaning & Wrangling | [transformation.ipynb](https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/notebook/transformation.ipynb) | Python, Jupyter Notebook       |
+| 3  | Data Loading            | [data_loading_csv.py](https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/src/data_loading_csv.py) | Python, pgAdmin, Docker    |
+| 4  | Data Analysis           | [analysis_sql_query.ipynb](https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/notebook/analysis_sql_query.ipynb) | Python, PostgreSQL       |
 | 5  | Dashboard & Visualization| [Tableau Dashboard](https://public.tableau.com/app/profile/rachel.li3670/viz/consumerfinancecomplaints/Trend) | Tableau                        |
 
 
