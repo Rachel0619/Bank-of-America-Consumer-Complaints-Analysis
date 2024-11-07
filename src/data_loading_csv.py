@@ -37,7 +37,7 @@ def main():
     engine = create_engine(f'postgresql://{user}:{password}@{host}:{port}/{db}')
 
     # Load the complaints file
-    complaints_file_path = os.path.join(os.getcwd(), 'data/processed/complaints_transformed_2.csv')
+    complaints_file_path = os.path.join(os.getcwd(), 'data/processed/BOA_consumer_complaints_2024-01-01_to_2024-08-31.csv')
     load_data_to_db(complaints_file_path, 'complaints', engine)
 
     # Load the census population file
