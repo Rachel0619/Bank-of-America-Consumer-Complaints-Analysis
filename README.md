@@ -48,13 +48,13 @@ Given the heavy presence of text fields, especially the `Consumer complaint narr
 
 ## ETL pipeline
 
-In this project, I did the workflow orchestration and set up the ETL (Extract, Transform and Load) pipeline using [Mage](https://github.com/mage-ai/mage-ai?tab=readme-ov-file), an open-source, hybrid framework for transforming and integrating data. The high level steps are listed as follow, you can find the detailed ETL code [here](https://github.com/Rachel0619/Bank-of-America-Consumer-Complaints-Analysis/tree/main/us_consumer_complaints)
+In this project, I orchestrated the workflow and set up a complete ETL (Extract, Transform, and Load) pipeline using [Mage](https://github.com/mage-ai/mage-ai?tab=readme-ov-file), an open-source, hybrid framework designed for efficient data transformation and integration. Here’s a high-level overview of the steps I followed, with the full ETL code available [here](https://github.com/Rachel0619/Bank-of-America-Consumer-Complaints-Analysis/tree/main/us_consumer_complaints).
 
-1. Containerization: used Docker to set up a Mage AI container for workflow orchestration, along with a PostgreSQL container to manage pipeline metadata.
-2. Data Ingestion: pulled data from [Consumer Complaint Database API](https://cfpb.github.io/api/ccdb/api.html) using request in Python.
-3. Data Transformation: parsed the JSON data and transformed it into a DataFrame format for relational database storage.
-4. Data Storage: stored the data in Google Cloud Storage (GCS) as partitioned Parquet files for efficient access and scalability.
-5. Data Loading to BigQuery: Finally, I loaded the processed data from GCS into BigQuery, making it ready for large-scale analysis.
+1. Containerization: To streamline the setup and improve reproducibility, I used Docker to create a Mage AI container. Additionally, I deployed a PostgreSQL container to serve as the metadata database, storing information essential for tracking the pipeline’s progress and state.
+2. Data Ingestion: Using Python’s requests library, I connected to the [Consumer Complaint Database API](https://cfpb.github.io/api/ccdb/api.html) to retrieve fresh data in real-time. This automated data ingestion replaces manual file downloads, making the process more scalable and responsive to updates in the data source.
+3. Data Transformation: After ingestion, I parsed the JSON response from the API and transformed the raw data into a structured DataFrame format, preparing it for storage in a relational database. 
+4. Data Storage: Once transformed, I stored the data in Google Cloud Storage (GCS) as partitioned Parquet files. Partitioning the data by key fields allows for more efficient access and faster queries, while the Parquet format also helps reduce storage costs and improve scalability.
+5. Data Loading to BigQuery: Finally, I loaded the processed data from GCS into BigQuery. This makes the data readily available for large-scale analysis, leveraging BigQuery’s powerful querying capabilities for faster insights and deeper exploration of consumer complaints data.
 
 ## Overview of Findings
 
