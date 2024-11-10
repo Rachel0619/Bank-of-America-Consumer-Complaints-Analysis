@@ -13,8 +13,8 @@
 
 | #  | Purpose                | File Name with Link                                                                                             | Tools Used                    |
 |----|------------------------|-----------------------------------------------------------------------------------------------------------------|-------------------------------|
-| 1  | EDA                    | [EDA.ipynb](https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/notebook/EDA.ipynb)        | Python, Jupyter Notebook       |
-| 2  | ETL Pipeline | [ETL_GCP](https://github.com/Rachel0619/Bank-of-America-Consumer-Complaints-Analysis/tree/main/us_consumer_complaints) | Mage, Docker, GCP (Cloud Storage, BigQuery), Python       |
+| 1  | ETL Pipeline | [ETL_GCP](https://github.com/Rachel0619/Bank-of-America-Consumer-Complaints-Analysis/tree/main/us_consumer_complaints) | Mage, Docker, GCP (Cloud Storage, BigQuery), Python       |
+| 2  | EDA                    | [EDA.ipynb](https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/notebook/EDA.ipynb)        | Python, Jupyter Notebook       |
 | 3  | Data Analysis           | [analysis_sql_query.ipynb](https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/notebook/analysis_sql_query.ipynb) | Python, PostgreSQL       |
 | 4  | Dashboard & Visualization| [Tableau Dashboard](https://public.tableau.com/app/profile/rachel.li3670/viz/consumerfinancecomplaints/Trend) | Tableau                        |
 
