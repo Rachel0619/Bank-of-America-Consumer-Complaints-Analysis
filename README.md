@@ -14,10 +14,9 @@
 | #  | Purpose                | File Name with Link                                                                                             | Tools Used                    |
 |----|------------------------|-----------------------------------------------------------------------------------------------------------------|-------------------------------|
 | 1  | EDA                    | [EDA.ipynb](https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/notebook/EDA.ipynb)        | Python, Jupyter Notebook       |
-| 2  | Data Cleaning & Wrangling | [transformation.ipynb](https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/notebook/transformation.ipynb) | Python, Jupyter Notebook       |
-| 3  | Data Loading            | [data_loading_csv.py](https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/src/data_loading_csv.py) | Python, pgAdmin, Docker    |
-| 4  | Data Analysis           | [analysis_sql_query.ipynb](https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/notebook/analysis_sql_query.ipynb) | Python, PostgreSQL       |
-| 5  | Dashboard & Visualization| [Tableau Dashboard](https://public.tableau.com/app/profile/rachel.li3670/viz/consumerfinancecomplaints/Trend) | Tableau                        |
+| 2  | ETL Pipeline | [ETL_GCP](https://github.com/Rachel0619/Bank-of-America-Consumer-Complaints-Analysis/tree/main/us_consumer_complaints) | Mage, Docker, GCP (Cloud Storage, BigQuery), Python       |
+| 3  | Data Analysis           | [analysis_sql_query.ipynb](https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/notebook/analysis_sql_query.ipynb) | Python, PostgreSQL       |
+| 4  | Dashboard & Visualization| [Tableau Dashboard](https://public.tableau.com/app/profile/rachel.li3670/viz/consumerfinancecomplaints/Trend) | Tableau                        |
 
 ## Project Background 
 
@@ -40,12 +39,22 @@ You will get a full picture of the database this project works on by examining t
 
 This database contains a total of 17 fields (I dropped the "company" column because we are only working with Bank of America data here. I also dropped the "Consumer disputed?" here because all values for this field are missing):
 
-- Text (Categorical and Descriptive): 12 fields, including fields like Product, Issue, Company public response, Consumer complaint narrative, and Tags. Many of these fields are categorical, while some like Consumer complaint narrative contain substantial text. 
+- Text (Categorical and Descriptive): 12 fields, including fields like Product, Issue, Company public response, Consumer complaint narrative, and Tags. Many of these fields are categorical, while some like Consumer complaint narrative contain substantial text.
 - Date & Time: 2 fields, including Date received and Date sent to company. These fields allow for temporal analysis, such as identifying complaint trends over time.
 - Numeric: 1 field, Complaint ID, which is a unique identifier for each complaint.
 - Boolean: 2 fields, including Timely response?, Consumer consent provided?, which are binary in nature (yes/no). 
 
 Given the heavy presence of text fields, especially the `Consumer complaint narrative`, this database lends itself well to NLP techniques to extract insights such as common themes, sentiment analysis, or complaint categorization. 
+
+## ETL pipeline
+
+In this project, I did the workflow orchestration and set up the ETL (Extract, Transform and Load) pipeline using [Mage](https://github.com/mage-ai/mage-ai?tab=readme-ov-file), an open-source, hybrid framework for transforming and integrating data. The high level steps are listed as follow, you can find the detailed ETL code [here](https://github.com/Rachel0619/Bank-of-America-Consumer-Complaints-Analysis/tree/main/us_consumer_complaints)
+
+1. Containerization: used Docker to set up a Mage AI container for workflow orchestration, along with a PostgreSQL container to manage pipeline metadata.
+2. Data Ingestion: pulled data from [Consumer Complaint Database API](https://cfpb.github.io/api/ccdb/api.html) using request in Python.
+3. Data Transformation: parsed the JSON data and transformed it into a DataFrame format for relational database storage.
+4. Data Storage: stored the data in Google Cloud Storage (GCS) as partitioned Parquet files for efficient access and scalability.
+5. Data Loading to BigQuery: Finally, I loaded the processed data from GCS into BigQuery, making it ready for large-scale analysis.
 
 ## Overview of Findings
 
