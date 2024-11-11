@@ -13,7 +13,7 @@
 
 | #  | Purpose                | File Name with Link                                                                                             | Tools Used                    |
 |----|------------------------|-----------------------------------------------------------------------------------------------------------------|-------------------------------|
-| 1  | ETL Pipeline | [ETL_GCP](https://github.com/Rachel0619/Bank-of-America-Consumer-Complaints-Analysis/tree/main/us_consumer_complaints) | Mage, Docker, GCP (Cloud Storage, BigQuery), Python       |
+| 1  | ETL Pipeline | [ETL_GCP](https://github.com/Rachel0619/Bank-of-America-Consumer-Complaints-Analysis/tree/main/docker_mage) | Mage, Docker, GCP (Cloud Storage, BigQuery), Python       |
 | 2  | EDA                    | [EDA.ipynb](https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/notebook/EDA.ipynb)        | Python, Jupyter Notebook       |
 | 3  | Data Analysis           | [analysis_sql_query.ipynb](https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/notebook/analysis_sql_query.ipynb) | Python, PostgreSQL       |
 | 4  | Dashboard & Visualization| [Tableau Dashboard](https://public.tableau.com/app/profile/rachel.li3670/viz/consumerfinancecomplaints/Trend) | Tableau                        |
@@ -48,7 +48,7 @@ Given the heavy presence of text fields, especially the `Consumer complaint narr
 
 ## ETL pipeline
 
-In this project, I orchestrated the workflow and set up a complete ETL (Extract, Transform, and Load) pipeline using [Mage](https://github.com/mage-ai/mage-ai?tab=readme-ov-file), an open-source, hybrid framework designed for efficient data transformation and integration. Here’s a high-level overview of the steps I followed, with the full ETL code and set up guide available [here](https://github.com/Rachel0619/Bank-of-America-Consumer-Complaints-Analysis/tree/main/us_consumer_complaints).
+In this project, I orchestrated the workflow and set up a complete ETL (Extract, Transform, and Load) pipeline using [Mage](https://github.com/mage-ai/mage-ai?tab=readme-ov-file), an open-source, hybrid framework designed for efficient data transformation and integration. Here’s a high-level overview of the steps I followed, with the full ETL code and set up guide available [here](https://github.com/Rachel0619/Bank-of-America-Consumer-Complaints-Analysis/tree/main/docker_mage).
 
 1. Containerization: To streamline the setup and improve reproducibility, I used [Docker](https://docs.docker.com/) to create a Mage AI container. Additionally, I deployed a PostgreSQL container to serve as the metadata database, storing information essential for tracking the pipeline’s progress and state.
 2. Data Ingestion: Using Python’s requests library, I connected to the [Consumer Complaint Database API](https://cfpb.github.io/api/ccdb/api.html) to retrieve fresh data in real-time. This automated data ingestion replaces manual file downloads, making the process more scalable and responsive to updates in the data source.
