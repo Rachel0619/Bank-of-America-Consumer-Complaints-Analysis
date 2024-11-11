@@ -18,7 +18,7 @@
 - Create a new project. [Creating and managing projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
 - Create a new bucket for your project in Google Cloud Storage. [Create buckets](https://cloud.google.com/storage/docs/creating-buckets)
 - Create a new dataset and table in Google BigQuery. [Create and use tables](https://cloud.google.com/bigquery/docs/tables)
-- Create a service account for your project and grant it with the role 'owner' (you can certainly do it in a more granular way and grant the minimal roles required for this project)
+- Create a service account for your project and grant it with the role 'owner' (you can certainly do it in a more granular way and grant the minimal roles required for this project). [Create service accounts](https://cloud.google.com/iam/docs/service-accounts-create)
 - Create a json key for your service account and put it in the same folder as the ``docker-compose.yml`` file. This will make sure that the service account key would be mounted to the path '/home/src/' within the container. 
 
 ## Instructions
