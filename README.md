@@ -5,6 +5,7 @@
 - [Project Workflow and Tool Used](#project-workflow-and-tool-used)
 - [Project Background](#project-background)
 - [Dataset Overview and Field Descriptions](#dataset-overview-and-field-descriptions)
+- [ETL Pipeline](#etl-pipeline)
 - [Overview of Findings](#overview-of-findings)
 - [Insights Deep Dive](#insights-deep-dive)
 - [Setup Guide](#setup-guide)
@@ -15,7 +16,7 @@
 |----|------------------------|-----------------------------------------------------------------------------------------------------------------|-------------------------------|
 | 1  | ETL Pipeline | [ETL_GCP](https://github.com/Rachel0619/Bank-of-America-Consumer-Complaints-Analysis/tree/main/docker_mage) | Mage, Docker, GCP (Cloud Storage, BigQuery), Python       |
 | 2  | EDA                    | [EDA.ipynb](https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/notebook/EDA.ipynb)        | Python, Jupyter Notebook       |
-| 3  | Data Analysis           | [analysis_sql_query.ipynb](https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/notebook/analysis_sql_query.ipynb) | Python, PostgreSQL       |
+| 3  | Data Analysis           | [analysis_sql_query.ipynb](https://github.com/Rachel0619/US-Consumer-Finance-Complaints-Analysis/blob/main/notebook/analysis_sql_query.ipynb) | BigQuery, SQL       |
 | 4  | Dashboard & Visualization| [Tableau Dashboard](https://public.tableau.com/app/profile/rachel.li3670/viz/consumerfinancecomplaints/Trend) | Tableau                        |
 
 ## Project Background 
@@ -46,7 +47,7 @@ This database contains a total of 17 fields (I dropped the "company" column beca
 
 Given the heavy presence of text fields, especially the `Consumer complaint narrative`, this database lends itself well to NLP techniques to extract insights such as common themes, sentiment analysis, or complaint categorization. 
 
-## ETL pipeline
+## ETL Pipeline
 
 In this project, I orchestrated the workflow and set up a complete ETL (Extract, Transform, and Load) pipeline using [Mage](https://github.com/mage-ai/mage-ai?tab=readme-ov-file), an open-source, hybrid framework designed for efficient data transformation and integration. Here’s a high-level overview of the steps I followed, with the full ETL code and set up guide available [here](https://github.com/Rachel0619/Bank-of-America-Consumer-Complaints-Analysis/tree/main/docker_mage).
 
@@ -84,23 +85,3 @@ The analysis reveals that checking and savings accounts are the most frequent so
 - Most Common Type of Response: The data shows that the majority of complaints were closed with an explanation, making up 65.46% of all responses. In contrast, only 24.25% of cases led to monetary relief, and an additional 8.39% resulted in non-monetary relief. This highlights that companies are more likely to provide an explanation rather than compensation.
 
 - Most Common Sub-Issues for "Closed with Monetary Relief": Among the complaints that were resolved with monetary relief, the most common sub-issue was related to deposits and withdrawals (2.98%). Issues involving problem using a debit or ATM card (2.34%) and credit card disputes (1.86%) also appear frequently. This suggests that monetary relief is most often associated with problems that directly affect customers' access to or security of their funds. The high occurrence of disputes related to unauthorized transactions and fee problems shows the importance of proper transaction management and transparency in resolving consumer issues. The data also reflects that banking errors and problem during payment process are common pain points that are likely to lead to a financial settlement.
-
-## Setup Guide
-
-I used docker container to run postgres and pgadmin. To replicate the workflow, run the following steps:
-
-Make sure your docker daemon is running before starting.
-
-```
-docker-compose build
-docker-compose up -d
-```
-
-run `docker ps` to make sure that container for postgres and pgadmin are running, then navigate to 'localhost:8080' to open pgadmin GUI and login using the environment variable stored in `.env` file.
-
-I used virtual envirnoment to run my analysis. To replicate the workflow, run the following commends:
-
-```
-conda env create -f environment.yml
-conda activate complaints_analysis
-```
