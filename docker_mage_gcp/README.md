@@ -32,7 +32,7 @@
 
 2. Navigate to 'localhost:6789' in your browser and you will be directed to Mage UI, where you can start building your pipelines!
 
-![Mage UI](img/Mage UI.png)
+![Mage UI](../img/Mage_UI.png)
 
 3. I built two pipelines for this project which streamlined the entire ingestion, transformation and storage process.
 
